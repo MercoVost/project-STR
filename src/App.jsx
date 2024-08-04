@@ -1,4 +1,4 @@
-import axios, { all } from "axios";
+import axios from "axios";
 import { useState, useEffect } from "react";
 
 import { Controls } from "./components/Controls";
@@ -26,10 +26,10 @@ function App() {
           {countries.map((c) => {
             const countryInfo = {
               img: c.flags.png,
-              name: c.name,
+              name: c.name.common,
               info: [
                 {
-                  title: "Populateon",
+                  title: "Population",
                   description: c.population.toLocaleString(),
                 },
                 {
@@ -37,13 +37,13 @@ function App() {
                   description: c.region,
                 },
                 {
-                  title: "Capitan",
+                  title: "Capital",
                   description: c.capital,
                 },
               ],
             };
 
-            return <Card key={c.name} {...countryInfo} />;
+            return <Card key={c.name.common} {...countryInfo} />;
           })}
         </List>
       </Main>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Wrapper = styled.select`
+const Wrapper = styled.section`
   width: 100%;
   padding: 2rem 0;
 
@@ -21,5 +21,5 @@ const Wrapper = styled.select`
 `;
 
 export const List = ({ children }) => {
-  return <div>{children}</div>;
+  return <Wrapper>{children}</Wrapper>;
 };
