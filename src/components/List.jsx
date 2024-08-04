@@ -17,6 +17,7 @@ const Wrapper = styled.section`
   @media (min-width: 1024px) {
     grid-template-columns: repeat(4, 1fr);
     gap: 4rem;
+    margin: 0 a;
   }
 `;
 
