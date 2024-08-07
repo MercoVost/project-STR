@@ -1,16 +1,19 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-import { List } from "../components/List";
-import { Card } from "../components/Card";
-import { Controls } from "../components/Controls";
+import { List } from "../components/List.jsx";
+import { Card } from "../components/Card.jsx";
+import { Controls } from "../components/Controls.jsx";
 import { ALL_COUNTRIES } from "../config.js";
 
 export const HomePage = () => {
   const [countries, setCountries] = useState([]);
 
   const navigate = useNavigate();
+
+  let location = useLocation();
+  console.log("HomePage" + location.pathname);
 
   // console.log(countries);
 
@@ -19,7 +22,7 @@ export const HomePage = () => {
   }, []);
 
   const handleClick = (c) => {
-    navigate(`/country/${encodeURIComponent(c.name.common)}`);
+    navigate(/country/`${encodeURIComponent(c.name.com)}`);
   };
 
   return (
